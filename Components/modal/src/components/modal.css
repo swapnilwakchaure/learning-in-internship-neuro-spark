@@ -1,0 +1,70 @@
+.modal-button-div {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.modal-button-div > button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    background: maroon;
+    color: white;
+    cursor: pointer;
+}
+
+.modal-form {
+    text-align: start;
+    border: 1px solid;
+    padding: 10px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+
+    position: absolute;
+    top: 0%;
+    left: 40%;
+    right: auto;
+    bottom: auto;
+}
+
+.modal-form input {
+    display: inline-block;
+    margin: 10px 5px 5px 0px;
+}
+
+.modal-form select {
+    display: block;
+    margin: auto;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px 0px;
+}
+
+.modal-form label {
+    font-size: 16px;
+}
+
+.modal-form > button {
+    margin: 10px 0px 0px 190px;
+    padding: 5px 15px;
+    font-size: 1rem;
+    border: none;
+    background: maroon;
+    color: white;
+    font-weight: 400;
+    border-radius: 5px;
+}
+
+.address-error-message {
+    margin: 0px;
+    font-size: 14px;
+    color: red;
+    font-style: italic;
+}

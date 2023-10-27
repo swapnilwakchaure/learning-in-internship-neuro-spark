@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h3 {
+    color: red;
+    width: fit-content;
+    margin: auto;
+}
+
+.carousel-inner {
+    width: 70%;
+    margin: auto;
+}
+
+@media screen and (min-width: 568px) {
+    .cards-wrapper {
+        display: flex;
+    }
+
+    .card {
+        margin: 0 .5em;
+        width: calc(100%/3);
+    }
+}
+
+@media screen and (max-width: 567px) {
+    .card:not(:first-child) {
+        display: none;
+    }
+}

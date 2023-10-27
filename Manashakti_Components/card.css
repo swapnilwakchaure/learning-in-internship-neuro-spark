@@ -1,0 +1,171 @@
+/* address.js file css here */
+
+.address_main {
+    width: 85%;
+    max-width: 840px;
+    margin: 20px auto auto auto;
+}
+
+
+.saved_address_component {
+    position: relative;
+    /* border: 2px solid red; */
+}
+
+/* AddressCard.jsx style file css here */
+
+.address_card_container {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0px;
+    width: 100%;
+    line-height: 10px;
+    cursor: pointer;
+}
+
+.address_card_container:hover {
+    transition: 0.3s;
+}
+
+.address_header {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0px;
+}
+
+.address_card_container>div>p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.address_user_name {
+    font-weight: bold;
+}
+
+.delete_address_button {
+    position: absolute;
+    top: 0%;
+    left: 96.6%;
+    border: 0.5px solid;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background: white;
+}
+
+.delete_address_button:hover {
+    background: black;
+    color: white;
+    transition: 0.3s;
+}
+
+.saved_address_card_page {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/* modal form style css */
+
+.modal-form {
+    text-align: start;
+    border: 1px solid;
+    padding: 10px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+
+    position: absolute;
+    top: 0%;
+    left: 40%;
+    right: auto;
+    bottom: auto;
+}
+
+.modal-form input {
+    display: inline-block;
+    margin: 10px 5px 5px 0px;
+}
+
+.modal-form select {
+    display: block;
+    margin: auto;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px 0px;
+}
+
+.modal-form label {
+    font-size: 16px;
+}
+
+.modal-form > button {
+    margin: 10px 0px 0px 190px;
+    padding: 5px 15px;
+    font-size: 1rem;
+    border: none;
+    background: maroon;
+    color: white;
+    font-weight: 400;
+    border-radius: 5px;
+}
+
+.address-error-message {
+    margin: 0px;
+    font-size: 14px;
+    color: red;
+    font-style: italic;
+}
+
+
+
+
+@media screen and (max-width: 990px) {
+    .saved_address_card_page {
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .saved_address_card_page>div:first-child {
+        border-bottom: 1px solid;
+        margin-bottom: 10px;
+    }
+}
+
+
+@media screen and (max-width: 769px) {
+    .address_card_container {
+        display: block;
+        padding-left: 10px;
+    }
+
+    .delete_address_button {
+        left: 95.5%;
+    }
+}
+
+
+@media screen and (max-width: 426px) {
+    .delete_address_button {
+        left: 92%;
+    }
+}
+
+
+@media screen and (max-width: 376px) {
+    .delete_address_button {
+        left: 91%;
+    }
+}
+
+
+
+@media screen and (max-width: 321px) {
+    .delete_address_button {
+        left: 89.2%;
+    }
+}

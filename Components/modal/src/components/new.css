@@ -1,0 +1,35 @@
+.address-box {
+  /* border: 1px solid #ccc; */
+  border: 5px solid red;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: #007bff;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #ffffff;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: between;
+  margin-top: 3px;
+
+  border: 2px solid green;
+  position: absolute;
+  top: "100%"
+}
+
+.carousel-controls > button:first-child {
+  border: 2px solid red;
+}
+
+.carousel-controls > button:last-child {
+  border: 2px solid red;
+}

@@ -1,0 +1,35 @@
+.address-box {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    min-height: 150px;
+}
+
+
+.carousel-control-next-icon {
+    border: 3px solid;
+    border-radius: 50%;
+    color: black;
+}
+
+.carousel-control-prev-icon {
+    border: 3px solid;
+    border-radius: 50%;
+    color: black;
+}
+
+.visually-hidden {
+    color: darkblue;
+    border: 3px solid red;
+    font-size: 50px;
+    background: darkblue;
+}
+.carousel-control-prev {
+    border: 5px solid red;
+}
+
+.carousel-control-next {
+    border: 5px solid blue;
+}

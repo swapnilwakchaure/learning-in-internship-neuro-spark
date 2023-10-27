@@ -1,0 +1,24 @@
+.address-carousel {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.carousel-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* @media (min-width: 768px) {
+    .address-carousel .carousel-inner .carousel-item {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 767px) {
+    .address-carousel .carousel-inner .carousel-item {
+        display: flex;
+        justify-content: center;
+    }
+} */
