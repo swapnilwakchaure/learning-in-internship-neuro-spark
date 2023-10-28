@@ -61,4 +61,62 @@ for letter in name:
     else:
         str = str + letter.upper()
     num = num + 1
-print(str)
+# print(str)
+
+
+# lambda expression, map and filter function
+# 1. map function:
+
+def square(num):
+    return num**2
+
+mylist = [1,2,3,4,5]
+# print(list(map(square,mylist)))
+
+name = ['Sally', 'Jelly', 'Andy']
+
+def even_name(name):
+    if len(name) % 2 == 0:
+        return name
+    else:
+        return name[0]
+
+# print(list(map(even_name,name)))
+
+# 2. filter function
+
+nums = [1,2,3,4,5,6,7,8,9,10]
+def even_num(num):
+    return num % 2 == 0
+
+# print(list(filter(even_num, nums)))
+# print(list(filter(even_num, range(1, 11))))
+
+# 3. lambda expression
+# start with the basic function
+def square1(num):
+    result = num**2
+    return result
+
+# by optimizing it one step
+def square2(num):
+    return num**2
+
+# by converting above function into lambda expression
+# lambda functions are anonymous function
+square3 = lambda num: num ** 2
+# print(square3(5))
+
+
+# lambda expression using map function
+# print(list(map(lambda num: num**2, range(1,11))))
+
+# lambda expression using filter function
+
+# print(list(filter(lambda num: num % 2 == 0, range(1, 11))))
+
+# You have given names of list, grab the first letters of each name and write it in a list using lambda expression and map function
+namelist = ['Sally', 'Jelly', 'Andy']
+# print(list(map(lambda letter: letter[0], namelist)))
+
+
