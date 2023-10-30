@@ -3,7 +3,13 @@
 # Step 1: Write a function that can print out a board. Set up your board as a list, where each index 1-9 corresponds with a number on a number pad, so you get a 3 by 3 board representation.
 
 def display_board(board):
-    print(board)
+    print('-------------')
+    print('| ' + board[0] + ' | ' + board[1] + ' | ' + board[2] + ' |')
+    print('-------------')
+    print('| ' + board[3] + ' | ' + board[4] + ' | ' + board[5] + ' |')
+    print('-------------')
+    print('| ' + board[6] + ' | ' + board[7] + ' | ' + board[8] + ' |')
+    print('-------------')
 
 # Step 2: Write a function that can take in a player input and assign their marker as 'X' or 'O'. Think about using while loops to continually ask until you get a correct answer.
 
@@ -60,4 +66,7 @@ def replay():
 # 9. replay()
 
 print('Welcome to Tic Tac Toe')
+
+board = [' ']*9
+display_board(board)
 
