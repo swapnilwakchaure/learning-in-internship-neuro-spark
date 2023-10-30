@@ -37,7 +37,16 @@ def place_marker(board, marker, position):
 # Step 4: Write a function that takes in a board and a mark (X or O) and then checks to see if that mark has won.
 
 def win_check(board, mark):
-    board[mark]
+    return (
+        (board[0] == mark and board[1] == mark and board[2] == mark) or # for first row
+        (board[3] == mark and board[4] == mark and board[5] == mark) or # for middle row
+        (board[6] == mark and board[7] == mark and board[8] == mark) or # for last row
+        (board[0] == mark and board[3] == mark and board[6] == mark) or # for first column
+        (board[1] == mark and board[4] == mark and board[7] == mark) or # for middle column
+        (board[2] == mark and board[5] == mark and board[8] == mark) or # for last column
+        (board[0] == mark and board[4] == mark and board[8] == mark) or # for right diagonal
+        (board[2] == mark and board[4] == mark and board[6] == mark) # for left diagonal
+    )
 
 # Step 5: Write a function that uses the random module to randomly decide which player goes first. You may want to lookup random.randint() Return a string of which player went first.
 
