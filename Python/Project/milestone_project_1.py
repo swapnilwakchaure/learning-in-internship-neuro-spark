@@ -18,11 +18,7 @@ def player_input():
     marker = ''
 
     while marker not in ['X', 'O']:
-        marker = input('Player 1: Do you want to be X or O: ')
-        marker = marker.upper()
-
-        if marker not in ['X', 'O']:
-            print('Sorry, Invalid Input, Please Try Again')
+        marker = input('Player 1: Do you want to be X or O: ').upper()
         
     if marker == 'X':
         return ('X', 'O')
@@ -102,6 +98,84 @@ def replay():
 
 print('Welcome to Tic Tac Toe')
 
-board = [' ']*9
-display_board(board)
+# WHILE LOOP TO KEEP RUNNING THE GAME
+
+while True:
+    # START TO PLAY THE GAME
+
+    ## SET EVERYTHING UP (BOARD, WHOSE FIRST, CHOOSE MARKERS X,O)
+    board = [' ']*9
+    player1_marker, player2_marker = player_input()
+
+    turn = choose_first()
+    print(turn + ' will go first ')
+
+    play_game = input('Ready to play ? y or n: ').lower()
+
+    if play_game == 'y':
+        game_on = True
+    else:
+        game_on = False
+
+    ## GAME PLAY
+    while game_on:
+        ### PLAYER ONE TURN
+        if turn == 'Player 1':
+            # DISPLAY THE BOARD
+            display_board(board)
+
+            # CHOOSE A POSITION
+            position = player_choice(board)
+
+            # PLACE THE MARKER ON THE POSITION
+            place_marker(board, player1_marker, position)
+
+            # CHECK IF THEY WON
+            if win_check(board, player1_marker):
+                display_board(board)
+                print('PLAYER 1 HAS WON')
+                game_on = False
+            # OR CHECK IF THERE IS TIE
+            else:
+                if full_board_check(board):
+                    display_board(board)
+                    print('TIE GAME')
+                    game_on = False
+                else:
+                    turn = 'Player 2'
+                    # NO TIE OR NO WIN THEN NEXT PLAYER TURN
+
+        ### PLAYER TWO TURN
+        else:
+            # DISPLAY THE BOARD
+            display_board(board)
+
+            # CHOOSE A POSITION
+            position = player_choice(board)
+
+            # PLACE THE MARKER ON THE POSITION
+            place_marker(board, player2_marker, position)
+
+            # CHECK IF THEY WON
+            if win_check(board, player2_marker):
+                display_board(board)
+                print('PLAYER 2 HAS WON')
+                game_on = False
+            # OR CHECK IF THERE IS TIE
+            else:
+                if full_board_check(board):
+                    display_board(board)
+                    print('TIE GAME')
+                    game_on = False
+                else:
+                    turn = 'Player 1'
+                    # NO TIE OR NO WIN THEN NEXT PLAYER TURN
+
+    if not replay():
+        break
+    # BREAK OUT OF THE WHILE LOOP! STOP THE GAME!
+
+
+# please provide me the problem statement of creating reusable component in react.
+
 
