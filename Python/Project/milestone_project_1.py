@@ -81,12 +81,12 @@ def player_choice(board):
     while position not in range(1, 10) or not space_check(board, position):
         position = int(input('Choose a position: (1-9): '))
     
-    return position
+    return position-1
 
 # Step 9: Write a function that asks the player if they want to play again and returns a boolean True if they do want to play again.
 
 def replay():
-    pass
+    return input('Do you want to play again ? Yes or No: ').lower().startswith('y')
 
 # Step 10: Here comes the hard part! Use while loops and the functions you've made to run the game!
 
@@ -102,6 +102,6 @@ def replay():
 
 print('Welcome to Tic Tac Toe')
 
-board = ['X']*9
+board = [' ']*9
 display_board(board)
 
