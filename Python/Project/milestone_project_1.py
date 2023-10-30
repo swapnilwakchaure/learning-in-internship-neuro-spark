@@ -61,17 +61,27 @@ def choose_first():
 # Step 6: Write a function that returns a boolean indicating whether a space on the board is freely available.
 
 def space_check(board, position):
-    pass
+    return board[position] == ' '
 
 # Step 7: Write a function that checks if the board is full and returns a boolean value. True if full, False otherwise.
 
 def full_board_check(board):
-    pass
+    for i in range(0, 9):
+        if space_check(board, i):
+            return False
+    # IF BOARD IS FULL, THEN WE RETURN TRUE
+    return True
 
 # Step 8: Write a function that asks for a player's next position (as a number 1-9) and then uses the function from step 6 to check if it's a free position. If it is, then return the position for later use.
 
 def player_choice(board):
-    pass
+    
+    position = 'WRONG'
+
+    while position not in range(1, 10) or not space_check(board, position):
+        position = int(input('Choose a position: (1-9): '))
+    
+    return position
 
 # Step 9: Write a function that asks the player if they want to play again and returns a boolean True if they do want to play again.
 
@@ -92,6 +102,6 @@ def replay():
 
 print('Welcome to Tic Tac Toe')
 
-board = [' ']*9
+board = ['X']*9
 display_board(board)
 
