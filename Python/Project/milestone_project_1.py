@@ -46,24 +46,27 @@ def win_check(board, mark):
         (board[2] == mark and board[5] == mark and board[8] == mark) or # for last column
         (board[0] == mark and board[4] == mark and board[8] == mark) or # for right diagonal
         (board[2] == mark and board[4] == mark and board[6] == mark) # for left diagonal
-    )
+        )
 
 # Step 5: Write a function that uses the random module to randomly decide which player goes first. You may want to lookup random.randint() Return a string of which player went first.
 
 import random
 
 def choose_first():
-    random.randint(range(0,10))
+    if random.ranint(0, 1) == 0:
+        return 'Player 1'
+    else:
+        return 'Player 2'
 
 # Step 6: Write a function that returns a boolean indicating whether a space on the board is freely available.
 
 def space_check(board, position):
-    board[position]
+    pass
 
 # Step 7: Write a function that checks if the board is full and returns a boolean value. True if full, False otherwise.
 
 def full_board_check(board):
-    board
+    pass
 
 # Step 8: Write a function that asks for a player's next position (as a number 1-9) and then uses the function from step 6 to check if it's a free position. If it is, then return the position for later use.
 
