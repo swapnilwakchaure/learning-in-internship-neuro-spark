@@ -1,3 +1,13 @@
+# 1. 2 players should be able to play the game (both sitting at the same computer).
+# 2. The board should be printed out every time a player make a move.
+# 3. You should be able to accept user input of the player position and then place a symbol on the board.
+# 4. We will use the "numpad" to match numbers to the grid on a tic tac toe board.
+# ex. [1, 2, 3]
+#     [4, 5, 6]
+#     [7, 8, 9]
+# 5. Creating your first full program is always a big leap, but you will come out the other end a much better programmer.
+
+
 # def display_board(row1, row2, row3):
 #     print(row1)
 #     print(row2)
@@ -32,54 +42,88 @@ def user_input():
     
     print(int(choice))
 
-# user_input()
+
+# Milestone Project 1: Walkthrough Steps Workbook
+# Below is a set of steps for you to follow to try to create the Tic Tac Toe Milestone Project game!
+
+# Some suggested tools before you get started:
+# To take input from a user:
+
+# player1 = input("Please pick a marker 'X' or 'O'")
+
+# Note that input() takes in a string. If you need an integer value, use
+
+# position = int(input('Please enter a number'))
+
+
+# To clear the screen between moves:
+
+# from IPython.display import clear_output
+# clear_output()
+
+# Note that clear_output() will only work in jupyter. To clear the screen in other IDEs, consider:
+
+# print('\n'*100)
+
+# This scrolls the previous board up out of view. Now on to the program!
 
 
 
-# 1. mylist = [1, 2, 3]
-# 2. user position = 2
-# 3. user word = 'new'
-# 4. output = [1, 'new', 3]
-# 5. asking, do you want to play again ?
-# 6. if 'yes' or 'y' then starts from step 2.
 
-def player_position():
+# Step 1: Write a function that can print out a board. Set up your board as a list, where each index 1-9 corresponds with a number on a number pad, so you get a 3 by 3 board representation.
 
-    position = 'WRONG'
-    acceptable_range = range(1,4)
-    within_range = False
+def display_board(board):
+    print(' ' + board[0] + ' | ' + board[1] + ' | ' + board[2] + ' ')
+    print('-----------')
+    print(' ' + board[3] + ' | ' + board[4] + ' | ' + board[5] + ' ')
+    print('-----------')
+    print(' ' + board[6] + ' | ' + board[7] + ' | ' + board[8] + ' ')
 
-    while position.isdigit() == False or within_range == False:
-        position = input('Choose your position within 1, 2 or 3: ')
+board = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+display_board(board)
 
-        if position.isdigit() == False:
-            print('Sorry ! it is not a valid digit')
-        
-        if position.isdigit() == True:
-            if int(position) in acceptable_range:
-                within_range = True
-            else:
-                within_range = False
-                print('Please choose the position within range from 1, 2 and 3')
+# Step 2: Write a function that can take in a player input and assign their marker as 'X' or 'O'. Think about using while loops to continually ask until you get a correct answer.
 
-    return int(position)
+def player_input():
 
-def player_word():
-    word = input('Enter your word: ')
-    return word
+    marker = 'WRONG'
 
-def player_game(mylist, position, word):
+    while marker not in ['X', 'O']:
+        marker = input('Player 1: Do you want to be X or O: ')
+        marker = marker.upper()
 
-    while mylist[position-1] in range(1, 4):
-        position = player_position()
-        word = player_word()
+        if marker not in ['X', 'O']:
+            print('Select between only X or O')
     
-    mylist[position-1] = word
-    print(mylist)
+    if marker == 'X':
+        return ('X', 'O')
+    else:
+        return ('O', 'X')
 
-mylist = [1, 2, 3]
-position = player_position()
-word = player_word()
+marker = player_input()
+print('player: ',marker)
 
-player_game(mylist, position, word)
+# Step 2: Write a function that can take in a player input and assign their marker as 'X' or 'O'. Think about using while loops to continually ask until you get a correct answer.
+
+def player_marker(board, marker, position):
+    board[position] = marker
+
+
+player_marker(board, marker[0], 2)
+display_board(board)
+
+# Step 4: Write a function that takes in a board and a mark (X or O) and then checks to see if that mark has won.
+
+def win_check(board, mark):
+    return (
+        (board[0] == mark and board[1] == mark and board[2] == mark) or # check for top row
+        (board[3] == mark and board[4] == mark and board[5] == mark) or # check for middle row
+        (board[6] == mark and board[7] == mark and board[8] == mark) or # check for last row
+        (board[0] == mark and board[3] == mark and board[6] == mark) or # check for top column
+        (board[1] == mark and board[4] == mark and board[7] == mark) or # check for middle column
+        (board[2] == mark and board[5] == mark and board[8] == mark) or # check for last column
+        (board[0] == mark and board[4] == mark and board[8] == mark) or # check for right diagonal
+        (board[2] == mark and board[4] == mark and board[6] == mark) # check for left diagonal
+    )
+
 
