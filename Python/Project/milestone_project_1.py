@@ -49,7 +49,7 @@ def win_check(board, mark):
 import random
 
 def choose_first():
-    if random.ranint(0, 1) == 0:
+    if random.randint(0, 1) == 0:
         return 'Player 1'
     else:
         return 'Player 2'
@@ -176,6 +176,5 @@ while True:
     # BREAK OUT OF THE WHILE LOOP! STOP THE GAME!
 
 
-# please provide me the problem statement of creating reusable component in react.
 
 

@@ -168,19 +168,27 @@ def replay():
 print('Welcome to Tic Tac Toe!')
 
 while True:
+    # board of 9 empty output field
     board = [' '] * 10
+
+    # player markers X or O with tuple unpacking
     player1_marker, player2_marker = player_input()
+
+    # it randomly choose player1 or player2
     turn = choose_first()
     print(turn + ' will go first.')
 
+    # asking player to ready or not
     play_game = input('Are you ready to play? Enter Yes or No: ')
 
+    # if yes then game will be continue otherwise end the loop
     if play_game.lower()[0] == 'y':
         game_on = True
     else:
         game_on = False
 
-    while game_on:
+    # if game on then play the game
+    while game_on:      
         if turn == 'Player 1':
             # Player 1 turn
             
