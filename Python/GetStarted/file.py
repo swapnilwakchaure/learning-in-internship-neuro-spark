@@ -70,6 +70,8 @@ for letter in name:
 def square(num):
     return num**2
 
+sq = lambda num: num**2
+
 mylist = [1,2,3,4,5]
 # print(list(map(square,mylist)))
 
